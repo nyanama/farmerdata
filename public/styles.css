@@ -4,7 +4,7 @@ body {
 }
 
 html {
-  font-size: 125%;
+  font-size: 60%;
   line-height: 1.4;
   font-family: Helvetica;
 }
@@ -12,12 +12,12 @@ html {
 body {
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto 2fr;
   grid-template-areas:
-    "header header header"
-    "add-quotes add-quotes add-quotes"
-    "quotes quotes quotes";
+    "header header"
+    "add-quotes add-quotes"
+    "quotes quotes";
   gap: 1rem;
   margin: 0;
   padding: 1rem;
@@ -26,7 +26,6 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
-
 [data-position="header"] {
   grid-area: header;
 }
