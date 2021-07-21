@@ -1,0 +1,39 @@
+[debug] [2021-07-21T12:04:38.346Z] ----------------------------------------------------------------------
+[debug] [2021-07-21T12:04:38.350Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\dt203195\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-07-21T12:04:38.351Z] CLI Version:   9.16.0
+[debug] [2021-07-21T12:04:38.351Z] Platform:      win32
+[debug] [2021-07-21T12:04:38.351Z] Node Version:  v12.13.1
+[debug] [2021-07-21T12:04:38.355Z] Time:          Wed Jul 21 2021 17:34:38 GMT+0530 (India Standard Time)
+[debug] [2021-07-21T12:04:38.355Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-21T12:04:38.360Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-07-21T12:04:38.391Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-21T12:04:38.391Z] > authorizing via signed-in user (nyanamadala@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Node\crud-demo-master\crud-demo-master
+
+[debug] [2021-07-21T12:04:38.414Z] Error: read EINVAL
+    at TTY.onStreamRead (internal/stream_base_commons.js:201:27)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2021-07-21T12:04:38.724Z] TypeError: Cannot read property 'setRawMode' of null
+    at ReadStream.setRawMode (tty.js:71:28)
+    at Interface._setRawMode (readline.js:277:16)
+    at Interface.close (readline.js:400:10)
+    at PromptUI.close (C:\Users\dt203195\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\inquirer\lib\ui\baseUI.js:61:13)
+    at PromptUI.onForceClose (C:\Users\dt203195\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\inquirer\lib\ui\baseUI.js:38:10)
+    at process.emit (events.js:215:7)
+    at process.exit (internal/process/per_thread.js:158:15)
+    at Timeout._onTimeout (C:\Users\dt203195\AppData\Roaming\npm\node_modules\firebase-tools\lib\errorOut.js:20:17)
+    at listOnTimeout (internal/timers.js:531:17)
+    at processTimers (internal/timers.js:475:7)
+[error] 
+[error] Error: An unexpected error has occurred.

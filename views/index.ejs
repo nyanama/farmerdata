@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Farmers Data</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+  <body>
+    <h1 data-position="header">Madiki Farmers Data</h1>
+
+    <section data-position="add-quote">
+      <h2>Add Farmer</h2>
+
+      <form action="/farmers" method="POST">
+		<table >
+		<tr>  <td>Farmer Name: </td> <td><input type="text" placeholder="name" name="name" /></td> </tr>
+		<tr>  <td>Phone Number: </td> <td><input type="text" placeholder="phone number" name="phone" /></td> </tr>
+		<tr>  <td>Address: </td> <td><input type="text" placeholder="address" name="address" /></td> </tr>
+		<tr>  <td>Land Owner Details: </td> <td><input type="text" placeholder="land owner" name="landowner" /></td> </tr>
+		<tr>  <td><button type="submit">Submit</button></td> </tr>
+        </table>
+      </form>
+    </section>
+
+
+    <section data-position="quotes">
+
+	  <table>
+	  <th>Name</th><th>Phone</th><th>Address</th><th>Land Owner</th>
+        <% for(var i = 0; i < farmers.length; i++) {%>
+		<tr>
+          <td><%= farmers[i].name %></td>
+          <td><%= farmers[i].phone %></td>
+		  <td><%= farmers[i].address %></td>
+		  <td><%= farmers[i].landowner %></td>
+		 </tr>
+        <% } %>
+    </section>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
