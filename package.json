@@ -4,7 +4,7 @@
   "description": "Demo for Crud Express MongoDB article at https://zellwk.com/blog/crud-express-mongodb",
   "main": "server.js",
   "scripts": {
-    "start": "server.js"
+    "start": "node server.js"
   },
   "author": "Zell Liew <zellwk@gmail.com> (https://zellwk.com)",
   "license": "MIT",
