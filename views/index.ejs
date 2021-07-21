@@ -42,14 +42,15 @@ tr:nth-child(even) {
 
     <section data-position="quotes">
 
-	  <table>
-	  <th>Name</th><th>Phone</th><th>Address</th><th>Land Owner</th>
+	  <table id="updateTable">
+	  <th>Name</th><th>Phone</th><th>Address</th><th>Land Owner</th><th></th>
         <% for(var i = 0; i < farmers.length; i++) {%>
-		<tr>
-          <td><%= farmers[i].name %></td>
-          <td><%= farmers[i].phone %></td>
-		  <td><%= farmers[i].address %></td>
-		  <td><%= farmers[i].landowner %></td>
+		<tr id=<%= i %>>
+          <td><input type="text" readOnly=true placeholder="name" name="uname" value = "<%= farmers[i].name %>"/></td>
+          <td><input type="text" readOnly=true placeholder="phone number" name="uphone" value = "<%= farmers[i].phone %>"/></td>
+		  <td><input type="text" readOnly=true placeholder="address" name="uaddress" value = "<%= farmers[i].address %>"/></td>
+		  <td><input type="text" readOnly=true placeholder="land owner" name="ulandowner" value= "<%= farmers[i].landowner %>"/> </td>
+		  <td> <button name="update-button-edit" onClick="editRecord(<%= i %>)">Edit</button> <button name="update-button" onClick="updateRecord(<%= i %>)" value= "<%= i %>">Update</button>  <button name="delete-button" onClick="deleteRecord('<%= farmers[i].phone %>')" >Delete</button></td>
 		 </tr>
         <% } %>
     </section>

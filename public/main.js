@@ -1,32 +1,13 @@
 /* eslint-env browser */
 // main.js
-const update = document.querySelector('#update-button')
-const deleteButton = document.querySelector('#delete-button')
 const messageDiv = document.querySelector('#message')
 
-update.addEventListener('click', _ => {
-  fetch('/quotes', {
-    method: 'put',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      name: 'Darth Vadar',
-      quote: 'I find your lack of faith disturbing.'
-    })
-  })
-    .then(res => {
-      if (res.ok) return res.json()
-    })
-    .then(response => {
-      window.location.reload(true)
-    })
-})
-
-deleteButton.addEventListener('click', _ => {
-  fetch('/quotes', {
+function deleteRecord(phonev){
+	 fetch('/farmers', {
     method: 'delete',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      name: 'Darth Vadar'
+      phone: phonev
     })
   })
     .then(res => {
@@ -40,4 +21,31 @@ deleteButton.addEventListener('click', _ => {
       }
     })
     .catch(console.error)
-})
+}
+
+function editRecord(index){
+		document.getElementsByName('uname')[index].readOnly = false;
+		document.getElementsByName('uphone')[index].readOnly = false;
+		document.getElementsByName('uaddress')[index].readOnly = false;
+		document.getElementsByName('ulandowner')[index].readOnly = false;
+}
+
+function updateRecord(index){
+		  fetch('/farmers', {
+			method: 'put',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+			  name: document.getElementsByName('uname')[index].value,
+			  phone: document.getElementsByName('uphone')[index].value,
+			  address: document.getElementsByName('uaddress')[index].value,
+			  landowner: document.getElementsByName('ulandowner')[index].value,
+			})
+		  })
+			.then(res => {
+			  if (res.ok) return res.json()
+			})
+			.then(response => {
+			  window.location.reload(true)
+			})
+
+	}

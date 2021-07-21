@@ -18,6 +18,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     console.log('Connected to Database')
     const db = client.db('farmers-data-db')
     const quotesCollection = db.collection('farmers')
+	quotesCollection.createIndex( { "phone": 1 }, { unique: true } )
 
     // ========================
     // Middlewares
@@ -43,16 +44,21 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         .then(result => {
           res.redirect('/')
         })
-        .catch(error => console.error(error))
+        .catch(error => {
+		//alert('error occured');
+		res.redirect('/')
+		})
     })
 
     app.put('/farmers', (req, res) => {
       quotesCollection.findOneAndUpdate(
-        { name: 'Yoda' },
+        { phone: req.body.phone },
         {
           $set: {
             name: req.body.name,
-            quote: req.body.quote
+            phone: req.body.phone,
+			address: req.body.address,
+            landowner: req.body.landowner
           }
         },
         {
@@ -65,7 +71,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
 
     app.delete('/farmers', (req, res) => {
       quotesCollection.deleteOne(
-        { name: req.body.name }
+        { phone: req.body.phone }
       )
         .then(result => {
           if (result.deletedCount === 0) {
