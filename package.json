@@ -2,12 +2,9 @@
   "name": "crud-demo",
   "version": "1.0.0",
   "description": "Demo for Crud Express MongoDB article at https://zellwk.com/blog/crud-express-mongodb",
-  "main": "index.js",
+  "main": "web.js",
   "scripts": {
-    "start": "node pm2.js",
-    "restart": "node pm2.js crud-demo --update-env",
-    "dev": "nodemon server.js",
-    "sync": "node sync.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Zell Liew <zellwk@gmail.com> (https://zellwk.com)",
   "license": "MIT",
@@ -22,5 +19,8 @@
   "devDependencies": {
     "nodemon": "^2.0.12",
     "rsync": "^0.6.1"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
