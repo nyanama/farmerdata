@@ -2,6 +2,14 @@
 // main.js
 const messageDiv = document.querySelector('#message')
 
+function displayAll(){
+window.location.replace("/");
+}
+
+function displaySearchFarmer(phone){
+window.location.replace("/farmer?phone="+phone);
+}
+
 function deleteRecord(phonev){
 	 fetch('/farmers', {
     method: 'delete',

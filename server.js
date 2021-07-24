@@ -34,7 +34,22 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     app.get('/', (req, res) => {
       db.collection('farmers').find().toArray()
         .then(farmers => {
-          res.render('index.ejs', { farmers: farmers })
+          res.render('index.ejs', { farmers: farmers, errormessage:'' })
+        })
+        .catch(/* ... */)
+    })
+	
+	app.get('/farmer', (req, res) => {
+      db.collection('farmers').findOne({phone: req.query.phone })
+        .then(farmers => { 
+		  if(farmers != null)
+			res.render('index.ejs', { farmers: [farmers], errormessage:'' })
+		  else{
+		   db.collection('farmers').find().toArray()
+        .then(farmers => {
+          res.render('index.ejs', { farmers: farmers, errormessage:'no search found for the given input' })
+        })
+		  }
         })
         .catch(/* ... */)
     })

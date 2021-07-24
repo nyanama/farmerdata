@@ -39,6 +39,20 @@ tr:nth-child(even) {
       </form>
     </section>
 
+    <section data-position="add-quote">
+      <h2>Search Farmer</h2>
+
+		<table >
+		<tr>  <td>Phone Number: </td> <td><input id="sphone" type="text" placeholder="phone number" name="sphone" /></td> </tr>
+		<tr>  <td colspan="2" style="text-align:center"><button name="submit" onClick="displaySearchFarmer(document.getElementById('sphone').value)">Search Farmer</button></td> </tr>
+        </table>
+		<table >
+		<tr>  <td colspan="2" style="text-align:center"><button name="all" onClick="displayAll()">All Farmers</button></td> </tr>
+        </table>
+		<table >
+		<tr>  <td colspan="2"><h2 style="color:red;"><%= errormessage %> </h2></td> </tr>
+        </table>
+    </section>
 
     <section data-position="quotes">
 
